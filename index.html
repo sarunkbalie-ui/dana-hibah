@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="id">
 
 <head>
@@ -571,6 +570,20 @@ placeholder="Masukkan alamat lengkap"></textarea>
 
 </div>
 
+<div class="input-group">
+    
+<label>Nomor Telepon</label>
+<input
+type="tel"
+id="telepon"
+placeholder="Masukkan Nomor Telepon"
+inputmode="numeric"
+maxlength="15"
+oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+required>
+    
+</div>
+    
 <div class="form-title">
 
 Data Rekening
@@ -632,6 +645,7 @@ maxlength="25"
 oninput="this.value=this.value.replace(/[^0-9]/g,'')">
 
 </div>
+    
 <div class="form-title">
 
 Data Perpajakan
@@ -744,6 +758,7 @@ let tempat=document.getElementById("tempat").value;
 let tanggal=document.getElementById("tanggal").value;
 let ttl = tempat + ", " + tanggal;
 let alamat=document.getElementById("alamat").value;
+let telepon=document.getElementById("telepon").value;
 let bank=document.getElementById("bank").value;
 let namarek=document.getElementById("namarek").value;
 let rekening=document.getElementById("rekening").value;
@@ -754,6 +769,7 @@ if(
 nama==""||
 ttl==""||
 alamat==""||
+telepon==""||
 bank==""||
 namarek==""||
 rekening==""
@@ -763,14 +779,15 @@ rekening==""
 }
 
 if(!setuju){
-alert("Silakan centang pernyataan.");
-return;
+    alert("Silakan centang pernyataan.");
+    return;
 }
 
 const data={
 nama:nama,
 ttl:ttl,
 alamat:alamat,
+telepon:telepon,
 bank:bank,
 namarek:namarek,
 rekening:rekening,
@@ -791,14 +808,14 @@ body:JSON.stringify(data)
 
 });
 
-alert("✅ Data berhasil dikirim!");
+alert("Data berhasil dikirim!");
 
 document.getElementById("formDana").reset();
 cekForm();
 
 }catch(err){
 
-alert("❌ Gagal mengirim data.");
+alert("Gagal mengirim data.");
 
 console.log(err);
 
